@@ -515,7 +515,9 @@
 
       .matrix-head,
       .matrix-row {
-        grid-template-columns: 9rem repeat(8, minmax(6.4rem, 1fr));
+        width: max-content;
+        min-width: 100%;
+        grid-template-columns: 8.8rem repeat(8, 7rem);
       }
 
       .footer-band { padding: 1.8rem; }
