@@ -269,14 +269,16 @@
       margin-top: 1.6rem;
       border-radius: 18px;
       border: 1px solid rgba(0, 0, 0, 0.06);
-      overflow: hidden;
+      overflow-x: auto;
+      overflow-y: visible;
       background: #fcfbf9;
+      -webkit-overflow-scrolling: touch;
     }
 
     .matrix-head,
     .matrix-row {
       display: grid;
-      grid-template-columns: 13rem repeat(9, minmax(0, 1fr));
+      grid-template-columns: 13rem repeat(8, minmax(0, 1fr));
       gap: 0.8rem;
       padding: 1rem;
       align-items: stretch;
@@ -287,6 +289,9 @@
       font-size: 1.3rem;
       font-weight: 700;
       color: var(--text-soft);
+      position: sticky;
+      top: 0;
+      z-index: 6;
     }
 
     .matrix-row:nth-child(even) { background: rgba(0, 0, 0, 0.015); }
@@ -316,6 +321,9 @@
       padding-left: 1.2rem;
       font-size: 1.4rem;
       font-weight: 700;
+      position: sticky;
+      left: 0;
+      z-index: 4;
     }
 
     .matrix-label small {
@@ -372,6 +380,13 @@
       font-size: 1.1rem;
       font-weight: 700;
       white-space: nowrap;
+    }
+
+    .matrix-head > :first-child {
+      position: sticky;
+      left: 0;
+      z-index: 7;
+      background: rgba(30, 57, 50, 0.08);
     }
 
     .hidden-section {
@@ -485,8 +500,7 @@
 
       .matrix-head,
       .matrix-row {
-        grid-template-columns: 10rem repeat(9, minmax(7rem, 1fr));
-        overflow-x: auto;
+        grid-template-columns: 10rem repeat(8, minmax(7rem, 1fr));
       }
     }
 
@@ -501,7 +515,7 @@
 
       .matrix-head,
       .matrix-row {
-        grid-template-columns: 9rem repeat(9, minmax(6.4rem, 1fr));
+        grid-template-columns: 9rem repeat(8, minmax(6.4rem, 1fr));
       }
 
       .footer-band { padding: 1.8rem; }
