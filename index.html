@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>7800踰?踰꾩뒪 李⑤궡 ?ъ감?몄썝</title>
+  <title>7800번 버스 차내 재차인원</title>
   <style>
     :root {
       color-scheme: light;
@@ -546,75 +546,76 @@
 </head>
 <body>
   <main class="page">
-    <section class="hero" aria-label="7800踰?踰꾩뒪 李⑤궡 ?ъ감?몄썝">
+    <section class="hero" aria-label="7800번 버스 차내 재차인원">
       <div class="hero-main">
         <div class="hero-band">
-          <h1 class="hero-title">7800 ??쇱?</h1>
-          <p class="hero-copy">?щ떦??踰덉텧援ъ븵?먯꽌 7800踰?踰꾩뒪??????됯퇏 ?몄썝?섎? ?쒓컙?蹂꾨줈 蹂댁뿬?쒕┰?덈떎</p>
-          <p class="hero-copy">?섎떒??"?뺣쪟???ㅼ떆媛??뺣낫 ?뺤씤?섍린" 踰꾪듉???꾨Ⅴ硫??ㅼ씠踰꾩??꾨줈 ?곌껐?⑸땲??/p>
-          <p class="hero-copy">1痢듬쾭?ㅻ뒗 44?? 2痢듬쾭?ㅻ뒗 70?앹엯?덈떎</p>
+          <h1 class="hero-title">7800 노선 분석</h1>
+          <p class="hero-copy">사당역 인근 7800번 버스의 차내 재차인원을 시간대별로 보여줍니다.</p>
+          <p class="hero-copy">하단의 "정류소 실시간 정보 확인하기"와 "지하철 실시간 정보 확인하기" 버튼으로 네이버지도와 연결됩니다.</p>
+          <p class="hero-copy">실시간(예상)혼잡도는 현재 요일과 현재 시간의 과거 평균으로 계산합니다.</p>
         </div>
       </div>
 
-      <aside class="hero-side" aria-label="?곗씠???붿빟">
+      <aside class="hero-side" aria-label="데이터 요약">
         <div class="station-card">
-          <div class="station-label">?뺣쪟??/div>
-          <div class="station-name">?щ떦??踰덉텧援ъ븵</div>
-          <div class="station-subtitle">7800踰?踰꾩뒪</div>
+          <div class="station-label">정류소</div>
+          <div class="station-name">사당역9번출구앞</div>
+          <div class="station-subtitle">7800번 버스</div>
         </div>
 
         <div class="summary-grid">
           <div class="summary-item">
             <div>
-              <strong>?쒖떆 踰붿쐞</strong>
+              <strong>표시 범위</strong>
               <span id="dateRangeLabel">2026-06-01 ~ 2026-06-21</span>
             </div>
-            <div class="status-pill" id="rangeStatus">21媛??뚯씪 諛섏쁺</div>
+            <div class="status-pill" id="rangeStatus">21개 파일 반영</div>
           </div>
           <div class="summary-item">
             <div>
-              <strong>?곗꽑 ?붿씪</strong>
-              <span id="preferredWeekdayLabel">?섏슂???곗꽑</span>
+              <strong>우선 요일</strong>
+              <span id="preferredWeekdayLabel">수요일 우선</span>
             </div>
-            <div class="status-pill" id="preferredDateLabel">6/17(??</div>
+            <div class="status-pill" id="preferredDateLabel">6/17(수)</div>
           </div>
           <div class="summary-item">
             <div>
-              <strong>?ㅼ떆媛??덉긽)?쇱옟??/strong>
-              <span id="liveCongestionLabel">?꾩옱 ?쒓컙 湲곗? ?됯퇏媛?/span>
+              <strong>실시간(예상)혼잡도</strong>
+              <span id="liveCongestionLabel">현재 시간 기준 평균값</span>
             </div>
-            <div class="status-pill is-live" id="liveCongestionValue">怨꾩궛 以?/div>
+            <div class="status-pill is-live" id="liveCongestionValue">계산 중</div>
           </div>
         </div>
       </aside>
     </section>
 
-    <section class="panel" aria-label="?쒓컙蹂?李⑤궡 ?ъ감?몄썝 ??>
+    <section class="panel" aria-label="시간별 차내 재차인원 표">
       <div class="panel-header">
-        <h2 class="panel-title">?쒓컙蹂??ъ감?몄썝</h2>
-        <div class="panel-note">媛숈? ?붿씪??怨쇨굅 ?곗씠?곕? ?곗꽑?곸쑝濡?癒쇱? 蹂댁뿬以띾땲??/div>
+        <h2 class="panel-title">시간별 재차인원</h2>
+        <div class="panel-note">같은 요일의 과거 데이터를 우선적으로 먼저 보여줍니다</div>
       </div>
 
       <div class="matrix-shell" id="matrix"></div>
 
       <div class="toggle-row">
         <button class="pill" id="pastScheduleToggle" type="button" aria-expanded="false" aria-controls="pastScheduleSection">
-          怨쇨굅 ?쒓컙??        </button>
-        <span class="toggle-row-note" id="mobileRangeLabel" aria-label="?쒖떆 踰붿쐞">6/1(?? ~ 6/26(湲?</span>
+          과거 시간표
+        </button>
+        <span class="toggle-row-note" id="mobileRangeLabel" aria-label="표시 범위">6/1(일) ~ 6/26(금)</span>
       </div>
 
       <div class="hidden-section" id="pastScheduleSection" aria-hidden="true">
         <div class="section-divider">
           <div class="panel-header">
-            <h2 class="panel-title">怨쇨굅 ?쒓컙??/h2>
-            <div class="panel-note">媛숈? ?붿씪???쒖쇅???섎㉧吏 ?곗씠?곗엯?덈떎</div>
+            <h2 class="panel-title">과거 시간표</h2>
+            <div class="panel-note">같은 요일을 제외한 나머지 데이터입니다</div>
           </div>
           <div class="matrix-shell" id="pastMatrix"></div>
         </div>
       </div>
     </section>
 
-    <section class="footer-band" aria-label="?섎떒 ?덈궡">
+    <section class="footer-band" aria-label="실시간 안내">
       <div>
       </div>
       <div class="hero-actions">
@@ -624,7 +625,7 @@
           target="_blank"
           rel="noreferrer"
         >
-          ?뺣쪟???ㅼ떆媛??뺣낫 ?뺤씤?섍린
+          정류소 실시간 정보 확인하기
         </a>
         <a
           class="pill realtime-cta"
@@ -632,16 +633,17 @@
           target="_blank"
           rel="noreferrer"
         >
-          吏?섏쿋 ?ㅼ떆媛??뺣낫 ?뺤씤?섍린
+          지하철 실시간 정보 확인하기
         </a>
       </div>
     </section>
   </main>
 
+  <script src="bus-records.js"></script>
   <script src="congestion-data.js"></script>
   <script>
-    const HOURS = ["17??, "18??, "19??, "20??, "21??, "22??, "23??, "00??];
-    const WEEKDAYS = ["??, "??, "??, "??, "紐?, "湲?, "??];
+    const HOURS = ["17시", "18시", "19시", "20시", "21시", "22시", "23시", "00시"];
+    const WEEKDAYS = ["일", "월", "화", "수", "목", "금", "토"];
     const TODAY = new Date();
     const HOLIDAY_DATES = new Set([
       // 2026???쒓뎅 怨듯쑕?쇨낵 ?泥닿났?댁씪
@@ -682,9 +684,9 @@
     }
 
     const TARGET_WEEKDAY = isHoliday(TODAY) ? 0 : TODAY.getDay();
-    const TARGET_WEEKDAY_LABEL = isHoliday(TODAY) ? "?쇱슂?? : WEEKDAYS[TODAY.getDay()];
+    const TARGET_WEEKDAY_LABEL = isHoliday(TODAY) ? "일요일" : WEEKDAYS[TODAY.getDay()];
 
-    const DATA = [
+    let DATA = [
       { date: "20260601", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 52, "18??: 69, "19??: 44, "20??: 44, "21??: 39, "22??: 52, "23??: 32, "00??: 18 } },
       { date: "20260602", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 55, "18??: 62, "19??: 50, "20??: 44, "21??: 42, "22??: 51, "23??: 43, "00??: 40 } },
       { date: "20260603", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 37, "18??: 33, "19??: 33, "20??: 44, "21??: 69, "22??: 68, "23??: 37, "00??: 30 } },
@@ -721,7 +723,7 @@
 
     function formatDate(dateString) {
       const date = parseDateString(dateString);
-      const holidayLabel = isHoliday(date) ? ", 怨듯쑕?? : "";
+      const holidayLabel = isHoliday(date) ? ", 공휴일" : "";
       return `${date.getMonth() + 1}/${date.getDate()}(${WEEKDAYS[date.getDay()]}${holidayLabel})`;
     }
 
@@ -737,35 +739,18 @@
       const date = parseDateString(dateString);
       const diffDays = Math.floor((TODAY.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
       const weeksAgo = Math.max(0, Math.floor(diffDays / 7));
-      return `${weeksAgo}二???;
+      return `${weeksAgo}주 전`;
     }
 
     function getCurrentHourLabel(date = TODAY) {
       const hour = date.getHours();
-      if (hour === 0) return "00??;
-      if (hour >= 17 && hour <= 23) return `${hour}??;
+      if (hour === 0) return "00시";
+      if (hour >= 17 && hour <= 23) return `${hour}시`;
       return null;
     }
 
-    function getLiveCongestionEstimate(rows, weekday, hourLabel) {
-      if (!hourLabel) return null;
-
-      const values = rows
-        .filter((row) => parseDateString(row.date).getDay() === weekday)
-        .map((row) => row.values[hourLabel])
-        .filter((value) => Number.isFinite(value));
-
-      if (!values.length) return null;
-
-      const total = values.reduce((sum, value) => sum + value, 0);
-      return {
-        average: total / values.length,
-        sampleCount: values.length,
-      };
-    }
-
     function getLiveHourLabel(date = TODAY) {
-      return `${String(date.getHours()).padStart(2, "0")}??;
+      return `${String(date.getHours()).padStart(2, "0")}시`;
     }
 
     function getCongestionEstimate(weekday, hourLabel) {
@@ -786,6 +771,8 @@
       const preferredDates = new Set(getPreferredRows(rows).map((row) => row.date));
       return rows.filter((row) => !preferredDates.has(row.date)).sort((a, b) => compareDateStringsDesc(a.date, b.date));
     }
+
+    DATA = window.BUS_RECORDS || DATA;
 
     function getOrderedRows(rows) {
       const preferredDates = new Set(getPreferredRows(rows).map((row) => row.date));
