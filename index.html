@@ -229,6 +229,11 @@
       white-space: nowrap;
     }
 
+    .status-pill.is-live {
+      background: #e8f4ff;
+      color: #0b5cab;
+    }
+
     .panel {
       padding: 2.2rem;
       margin-top: 1.6rem;
@@ -573,6 +578,13 @@
             </div>
             <div class="status-pill" id="preferredDateLabel">6/17(수)</div>
           </div>
+          <div class="summary-item">
+            <div>
+              <strong>실시간(예상)혼잡도</strong>
+              <span id="liveCongestionLabel">현재 시간 기준 평균값</span>
+            </div>
+            <div class="status-pill is-live" id="liveCongestionValue">계산 중</div>
+          </div>
         </div>
       </aside>
     </section>
@@ -728,6 +740,30 @@
       return `${weeksAgo}주 전`;
     }
 
+    function getCurrentHourLabel(date = TODAY) {
+      const hour = date.getHours();
+      if (hour === 0) return "00시";
+      if (hour >= 17 && hour <= 23) return `${hour}시`;
+      return null;
+    }
+
+    function getLiveCongestionEstimate(rows, weekday, hourLabel) {
+      if (!hourLabel) return null;
+
+      const values = rows
+        .filter((row) => parseDateString(row.date).getDay() === weekday)
+        .map((row) => row.values[hourLabel])
+        .filter((value) => Number.isFinite(value));
+
+      if (!values.length) return null;
+
+      const total = values.reduce((sum, value) => sum + value, 0);
+      return {
+        average: total / values.length,
+        sampleCount: values.length,
+      };
+    }
+
     function getPreferredRows(rows) {
       return rows
         .filter((row) => {
@@ -813,6 +849,8 @@
 
     function renderSummary() {
       const preferredRow = getPreferredRows(DATA)[0] || getOrderedRows(DATA)[0];
+      const currentHourLabel = getCurrentHourLabel();
+      const liveCongestion = getLiveCongestionEstimate(DATA, TARGET_WEEKDAY, currentHourLabel);
 
       document.getElementById("dateRangeLabel").textContent = formatDateRange(DATA[0].date, DATA[DATA.length - 1].date);
       document.getElementById("mobileRangeLabel").textContent = formatDateRange(DATA[0].date, DATA[DATA.length - 1].date);
@@ -821,6 +859,20 @@
         document.getElementById("preferredDateLabel").textContent = `${formatDate(preferredRow.date)} · ${getWeeksAgoLabel(preferredRow.date)}`;
       }
       document.getElementById("rangeStatus").textContent = `${DATA.length}개 파일 반영`;
+
+      const liveLabel = document.getElementById("liveCongestionLabel");
+      const liveValue = document.getElementById("liveCongestionValue");
+      if (liveCongestion && currentHourLabel) {
+        const roundedAverage = Math.round(liveCongestion.average * 10) / 10;
+        liveLabel.textContent = `${currentHourLabel} 기준 · ${liveCongestion.sampleCount}개 날짜 평균`;
+        liveValue.textContent = `${roundedAverage}명`;
+      } else if (currentHourLabel) {
+        liveLabel.textContent = `${currentHourLabel} 기준 · 평균 계산 불가`;
+        liveValue.textContent = "데이터 없음";
+      } else {
+        liveLabel.textContent = "17시~00시 구간만 제공";
+        liveValue.textContent = "현재 시간 제외";
+      }
     }
 
     function setupPastScheduleToggle() {
