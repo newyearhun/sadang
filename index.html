@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>7800번 버스 차내 재차인원</title>
+  <title>7800踰?踰꾩뒪 李⑤궡 ?ъ감?몄썝</title>
   <style>
     :root {
       color-scheme: light;
@@ -546,76 +546,75 @@
 </head>
 <body>
   <main class="page">
-    <section class="hero" aria-label="7800번 버스 차내 재차인원">
+    <section class="hero" aria-label="7800踰?踰꾩뒪 李⑤궡 ?ъ감?몄썝">
       <div class="hero-main">
         <div class="hero-band">
-          <h1 class="hero-title">7800 타야지</h1>
-          <p class="hero-copy">사당역9번출구앞에서 7800번 버스에 타는 평균 인원수를 시간대별로 보여드립니다</p>
-          <p class="hero-copy">하단의 "정류장 실시간 정보 확인하기" 버튼을 누르면 네이버지도로 연결됩니다</p>
-          <p class="hero-copy">1층버스는 44석, 2층버스는 70석입니다</p>
+          <h1 class="hero-title">7800 ??쇱?</h1>
+          <p class="hero-copy">?щ떦??踰덉텧援ъ븵?먯꽌 7800踰?踰꾩뒪??????됯퇏 ?몄썝?섎? ?쒓컙?蹂꾨줈 蹂댁뿬?쒕┰?덈떎</p>
+          <p class="hero-copy">?섎떒??"?뺣쪟???ㅼ떆媛??뺣낫 ?뺤씤?섍린" 踰꾪듉???꾨Ⅴ硫??ㅼ씠踰꾩??꾨줈 ?곌껐?⑸땲??/p>
+          <p class="hero-copy">1痢듬쾭?ㅻ뒗 44?? 2痢듬쾭?ㅻ뒗 70?앹엯?덈떎</p>
         </div>
       </div>
 
-      <aside class="hero-side" aria-label="데이터 요약">
+      <aside class="hero-side" aria-label="?곗씠???붿빟">
         <div class="station-card">
-          <div class="station-label">정류소</div>
-          <div class="station-name">사당역9번출구앞</div>
-          <div class="station-subtitle">7800번 버스</div>
+          <div class="station-label">?뺣쪟??/div>
+          <div class="station-name">?щ떦??踰덉텧援ъ븵</div>
+          <div class="station-subtitle">7800踰?踰꾩뒪</div>
         </div>
 
         <div class="summary-grid">
           <div class="summary-item">
             <div>
-              <strong>표시 범위</strong>
+              <strong>?쒖떆 踰붿쐞</strong>
               <span id="dateRangeLabel">2026-06-01 ~ 2026-06-21</span>
             </div>
-            <div class="status-pill" id="rangeStatus">21개 파일 반영</div>
+            <div class="status-pill" id="rangeStatus">21媛??뚯씪 諛섏쁺</div>
           </div>
           <div class="summary-item">
             <div>
-              <strong>우선 요일</strong>
-              <span id="preferredWeekdayLabel">수요일 우선</span>
+              <strong>?곗꽑 ?붿씪</strong>
+              <span id="preferredWeekdayLabel">?섏슂???곗꽑</span>
             </div>
-            <div class="status-pill" id="preferredDateLabel">6/17(수)</div>
+            <div class="status-pill" id="preferredDateLabel">6/17(??</div>
           </div>
           <div class="summary-item">
             <div>
-              <strong>실시간(예상)혼잡도</strong>
-              <span id="liveCongestionLabel">현재 시간 기준 평균값</span>
+              <strong>?ㅼ떆媛??덉긽)?쇱옟??/strong>
+              <span id="liveCongestionLabel">?꾩옱 ?쒓컙 湲곗? ?됯퇏媛?/span>
             </div>
-            <div class="status-pill is-live" id="liveCongestionValue">계산 중</div>
+            <div class="status-pill is-live" id="liveCongestionValue">怨꾩궛 以?/div>
           </div>
         </div>
       </aside>
     </section>
 
-    <section class="panel" aria-label="시간별 차내 재차인원 표">
+    <section class="panel" aria-label="?쒓컙蹂?李⑤궡 ?ъ감?몄썝 ??>
       <div class="panel-header">
-        <h2 class="panel-title">시간별 재차인원</h2>
-        <div class="panel-note">같은 요일의 과거 데이터를 우선적으로 먼저 보여줍니다</div>
+        <h2 class="panel-title">?쒓컙蹂??ъ감?몄썝</h2>
+        <div class="panel-note">媛숈? ?붿씪??怨쇨굅 ?곗씠?곕? ?곗꽑?곸쑝濡?癒쇱? 蹂댁뿬以띾땲??/div>
       </div>
 
       <div class="matrix-shell" id="matrix"></div>
 
       <div class="toggle-row">
         <button class="pill" id="pastScheduleToggle" type="button" aria-expanded="false" aria-controls="pastScheduleSection">
-          과거 시간표
-        </button>
-        <span class="toggle-row-note" id="mobileRangeLabel" aria-label="표시 범위">6/1(월) ~ 6/26(금)</span>
+          怨쇨굅 ?쒓컙??        </button>
+        <span class="toggle-row-note" id="mobileRangeLabel" aria-label="?쒖떆 踰붿쐞">6/1(?? ~ 6/26(湲?</span>
       </div>
 
       <div class="hidden-section" id="pastScheduleSection" aria-hidden="true">
         <div class="section-divider">
           <div class="panel-header">
-            <h2 class="panel-title">과거 시간표</h2>
-            <div class="panel-note">같은 요일을 제외한 나머지 데이터입니다</div>
+            <h2 class="panel-title">怨쇨굅 ?쒓컙??/h2>
+            <div class="panel-note">媛숈? ?붿씪???쒖쇅???섎㉧吏 ?곗씠?곗엯?덈떎</div>
           </div>
           <div class="matrix-shell" id="pastMatrix"></div>
         </div>
       </div>
     </section>
 
-    <section class="footer-band" aria-label="하단 안내">
+    <section class="footer-band" aria-label="?섎떒 ?덈궡">
       <div>
       </div>
       <div class="hero-actions">
@@ -625,7 +624,7 @@
           target="_blank"
           rel="noreferrer"
         >
-          정류소 실시간 정보 확인하기
+          ?뺣쪟???ㅼ떆媛??뺣낫 ?뺤씤?섍린
         </a>
         <a
           class="pill realtime-cta"
@@ -633,18 +632,19 @@
           target="_blank"
           rel="noreferrer"
         >
-          지하철 실시간 정보 확인하기
+          吏?섏쿋 ?ㅼ떆媛??뺣낫 ?뺤씤?섍린
         </a>
       </div>
     </section>
   </main>
 
+  <script src="congestion-data.js"></script>
   <script>
-    const HOURS = ["17시", "18시", "19시", "20시", "21시", "22시", "23시", "00시"];
-    const WEEKDAYS = ["일", "월", "화", "수", "목", "금", "토"];
+    const HOURS = ["17??, "18??, "19??, "20??, "21??, "22??, "23??, "00??];
+    const WEEKDAYS = ["??, "??, "??, "??, "紐?, "湲?, "??];
     const TODAY = new Date();
     const HOLIDAY_DATES = new Set([
-      // 2026년 한국 공휴일과 대체공휴일
+      // 2026???쒓뎅 怨듯쑕?쇨낵 ?泥닿났?댁씪
       "2026-01-01",
       "2026-02-16",
       "2026-02-17",
@@ -682,37 +682,37 @@
     }
 
     const TARGET_WEEKDAY = isHoliday(TODAY) ? 0 : TODAY.getDay();
-    const TARGET_WEEKDAY_LABEL = isHoliday(TODAY) ? "일요일" : WEEKDAYS[TODAY.getDay()];
+    const TARGET_WEEKDAY_LABEL = isHoliday(TODAY) ? "?쇱슂?? : WEEKDAYS[TODAY.getDay()];
 
     const DATA = [
-      { date: "20260601", station: "사당역9번출구앞", values: { "17시": 52, "18시": 69, "19시": 44, "20시": 44, "21시": 39, "22시": 52, "23시": 32, "00시": 18 } },
-      { date: "20260602", station: "사당역9번출구앞", values: { "17시": 55, "18시": 62, "19시": 50, "20시": 44, "21시": 42, "22시": 51, "23시": 43, "00시": 40 } },
-      { date: "20260603", station: "사당역9번출구앞", values: { "17시": 37, "18시": 33, "19시": 33, "20시": 44, "21시": 69, "22시": 68, "23시": 37, "00시": 30 } },
-      { date: "20260604", station: "사당역9번출구앞", values: { "17시": 66, "18시": 65, "19시": 62, "20시": 44, "21시": 39, "22시": 38, "23시": 30, "00시": 23 } },
-      { date: "20260605", station: "사당역9번출구앞", values: { "17시": 44, "18시": 68, "19시": 61, "20시": 59, "21시": 53, "22시": 41, "23시": 48, "00시": 38 } },
-      { date: "20260606", station: "사당역9번출구앞", values: { "17시": 40, "18시": 40, "19시": 53, "20시": 69, "21시": 69, "22시": 69, "23시": 70, "00시": 28 } },
-      { date: "20260607", station: "사당역9번출구앞", values: { "17시": 32, "18시": 36, "19시": 39, "20시": 44, "21시": 62, "22시": 47, "23시": 40, "00시": 0 } },
-      { date: "20260608", station: "사당역9번출구앞", values: { "17시": 48, "18시": 56, "19시": 60, "20시": 55, "21시": 55, "22시": 42, "23시": 23, "00시": 10 } },
-      { date: "20260609", station: "사당역9번출구앞", values: { "17시": 59, "18시": 51, "19시": 62, "20시": 44, "21시": 52, "22시": 62, "23시": 41, "00시": 20 } },
-      { date: "20260610", station: "사당역9번출구앞", values: { "17시": 45, "18시": 69, "19시": 69, "20시": 59, "21시": 47, "22시": 68, "23시": 40, "00시": 15 } },
-      { date: "20260611", station: "사당역9번출구앞", values: { "17시": 62, "18시": 61, "19시": 67, "20시": 44, "21시": 41, "22시": 44, "23시": 36, "00시": 16 } },
-      { date: "20260612", station: "사당역9번출구앞", values: { "17시": 60, "18시": 69, "19시": 44, "20시": 50, "21시": 67, "22시": 69, "23시": 43, "00시": 24 } },
-      { date: "20260613", station: "사당역9번출구앞", values: { "17시": 68, "18시": 51, "19시": 50, "20시": 69, "21시": 70, "22시": 69, "23시": 65, "00시": 33 } },
-      { date: "20260614", station: "사당역9번출구앞", values: { "17시": 33, "18시": 35, "19시": 44, "20시": 46, "21시": 63, "22시": 38, "23시": 21, "00시": 0 } },
-      { date: "20260615", station: "사당역9번출구앞", values: { "17시": 48, "18시": 61, "19시": 62, "20시": 41, "21시": 44, "22시": 40, "23시": 31, "00시": 17 } },
-      { date: "20260616", station: "사당역9번출구앞", values: { "17시": 64, "18시": 60, "19시": 44, "20시": 57, "21시": 60, "22시": 44, "23시": 40, "00시": 19 } },
-      { date: "20260617", station: "사당역9번출구앞", values: { "17시": 60, "18시": 60, "19시": 52, "20시": 40, "21시": 63, "22시": 43, "23시": 44, "00시": 15 } },
-      { date: "20260618", station: "사당역9번출구앞", values: { "17시": 63, "18시": 69, "19시": 50, "20시": 40, "21시": 61, "22시": 64, "23시": 43, "00시": 32 } },
-      { date: "20260619", station: "사당역9번출구앞", values: { "17시": 60, "18시": 57, "19시": 44, "20시": 45, "21시": 58, "22시": 64, "23시": 66, "00시": 33 } },
-      { date: "20260620", station: "사당역9번출구앞", values: { "17시": 50, "18시": 40, "19시": 35, "20시": 47, "21시": 68, "22시": 69, "23시": 68, "00시": 35 } },
-      { date: "20260621", station: "사당역9번출구앞", values: { "17시": 41, "18시": 39, "19시": 44, "20시": 45, "21시": 69, "22시": 68, "23시": 39, "00시": 0 } },
-      { date: "20260622", station: "사당역9번출구앞", values: { "17시": 60, "18시": 54, "19시": 66, "20시": 45, "21시": 44, "22시": 39, "23시": 37, "00시": 29 } },
-      { date: "20260623", station: "사당역9번출구앞", values: { "17시": 60, "18시": 61, "19시": 46, "20시": 43, "21시": 62, "22시": 69, "23시": 44, "00시": 12 } },
-      { date: "20260624", station: "사당역9번출구앞", values: { "17시": 70, "18시": 68, "19시": 69, "20시": 67, "21시": 47, "22시": 49, "23시": 44, "00시": 21 } },
-      { date: "20260625", station: "사당역9번출구앞", values: { "17시": 63, "18시": 62, "19시": 46, "20시": 47, "21시": 60, "22시": 55, "23시": 38, "00시": 21 } },
-      { date: "20260626", station: "사당역9번출구앞", values: { "17시": 57, "18시": 70, "19시": 65, "20시": 43, "21시": 44, "22시": 62, "23시": 68, "00시": 31 } },
-      { date: "20260627", station: "사당역9번출구앞", values: { "17시": 44, "18시": 49, "19시": 44, "20시": 45, "21시": 61, "22시": 70, "23시": 65, "00시": 27 } },
-      { date: "20260628", station: "사당역9번출구앞", values: { "17시": 49, "18시": 55, "19시": 49, "20시": 32, "21시": 19, "22시": 0, "23시": 0, "00시": 0 } },
+      { date: "20260601", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 52, "18??: 69, "19??: 44, "20??: 44, "21??: 39, "22??: 52, "23??: 32, "00??: 18 } },
+      { date: "20260602", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 55, "18??: 62, "19??: 50, "20??: 44, "21??: 42, "22??: 51, "23??: 43, "00??: 40 } },
+      { date: "20260603", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 37, "18??: 33, "19??: 33, "20??: 44, "21??: 69, "22??: 68, "23??: 37, "00??: 30 } },
+      { date: "20260604", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 66, "18??: 65, "19??: 62, "20??: 44, "21??: 39, "22??: 38, "23??: 30, "00??: 23 } },
+      { date: "20260605", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 44, "18??: 68, "19??: 61, "20??: 59, "21??: 53, "22??: 41, "23??: 48, "00??: 38 } },
+      { date: "20260606", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 40, "18??: 40, "19??: 53, "20??: 69, "21??: 69, "22??: 69, "23??: 70, "00??: 28 } },
+      { date: "20260607", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 32, "18??: 36, "19??: 39, "20??: 44, "21??: 62, "22??: 47, "23??: 40, "00??: 0 } },
+      { date: "20260608", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 48, "18??: 56, "19??: 60, "20??: 55, "21??: 55, "22??: 42, "23??: 23, "00??: 10 } },
+      { date: "20260609", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 59, "18??: 51, "19??: 62, "20??: 44, "21??: 52, "22??: 62, "23??: 41, "00??: 20 } },
+      { date: "20260610", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 45, "18??: 69, "19??: 69, "20??: 59, "21??: 47, "22??: 68, "23??: 40, "00??: 15 } },
+      { date: "20260611", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 62, "18??: 61, "19??: 67, "20??: 44, "21??: 41, "22??: 44, "23??: 36, "00??: 16 } },
+      { date: "20260612", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 60, "18??: 69, "19??: 44, "20??: 50, "21??: 67, "22??: 69, "23??: 43, "00??: 24 } },
+      { date: "20260613", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 68, "18??: 51, "19??: 50, "20??: 69, "21??: 70, "22??: 69, "23??: 65, "00??: 33 } },
+      { date: "20260614", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 33, "18??: 35, "19??: 44, "20??: 46, "21??: 63, "22??: 38, "23??: 21, "00??: 0 } },
+      { date: "20260615", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 48, "18??: 61, "19??: 62, "20??: 41, "21??: 44, "22??: 40, "23??: 31, "00??: 17 } },
+      { date: "20260616", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 64, "18??: 60, "19??: 44, "20??: 57, "21??: 60, "22??: 44, "23??: 40, "00??: 19 } },
+      { date: "20260617", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 60, "18??: 60, "19??: 52, "20??: 40, "21??: 63, "22??: 43, "23??: 44, "00??: 15 } },
+      { date: "20260618", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 63, "18??: 69, "19??: 50, "20??: 40, "21??: 61, "22??: 64, "23??: 43, "00??: 32 } },
+      { date: "20260619", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 60, "18??: 57, "19??: 44, "20??: 45, "21??: 58, "22??: 64, "23??: 66, "00??: 33 } },
+      { date: "20260620", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 50, "18??: 40, "19??: 35, "20??: 47, "21??: 68, "22??: 69, "23??: 68, "00??: 35 } },
+      { date: "20260621", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 41, "18??: 39, "19??: 44, "20??: 45, "21??: 69, "22??: 68, "23??: 39, "00??: 0 } },
+      { date: "20260622", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 60, "18??: 54, "19??: 66, "20??: 45, "21??: 44, "22??: 39, "23??: 37, "00??: 29 } },
+      { date: "20260623", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 60, "18??: 61, "19??: 46, "20??: 43, "21??: 62, "22??: 69, "23??: 44, "00??: 12 } },
+      { date: "20260624", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 70, "18??: 68, "19??: 69, "20??: 67, "21??: 47, "22??: 49, "23??: 44, "00??: 21 } },
+      { date: "20260625", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 63, "18??: 62, "19??: 46, "20??: 47, "21??: 60, "22??: 55, "23??: 38, "00??: 21 } },
+      { date: "20260626", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 57, "18??: 70, "19??: 65, "20??: 43, "21??: 44, "22??: 62, "23??: 68, "00??: 31 } },
+      { date: "20260627", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 44, "18??: 49, "19??: 44, "20??: 45, "21??: 61, "22??: 70, "23??: 65, "00??: 27 } },
+      { date: "20260628", station: "?щ떦??踰덉텧援ъ븵", values: { "17??: 49, "18??: 55, "19??: 49, "20??: 32, "21??: 19, "22??: 0, "23??: 0, "00??: 0 } },
     ];
 
     function parseDateString(dateString) {
@@ -721,7 +721,7 @@
 
     function formatDate(dateString) {
       const date = parseDateString(dateString);
-      const holidayLabel = isHoliday(date) ? ", 공휴일" : "";
+      const holidayLabel = isHoliday(date) ? ", 怨듯쑕?? : "";
       return `${date.getMonth() + 1}/${date.getDate()}(${WEEKDAYS[date.getDay()]}${holidayLabel})`;
     }
 
@@ -737,13 +737,13 @@
       const date = parseDateString(dateString);
       const diffDays = Math.floor((TODAY.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
       const weeksAgo = Math.max(0, Math.floor(diffDays / 7));
-      return `${weeksAgo}주 전`;
+      return `${weeksAgo}二???;
     }
 
     function getCurrentHourLabel(date = TODAY) {
       const hour = date.getHours();
-      if (hour === 0) return "00시";
-      if (hour >= 17 && hour <= 23) return `${hour}시`;
+      if (hour === 0) return "00??;
+      if (hour >= 17 && hour <= 23) return `${hour}??;
       return null;
     }
 
@@ -762,6 +762,15 @@
         average: total / values.length,
         sampleCount: values.length,
       };
+    }
+
+    function getLiveHourLabel(date = TODAY) {
+      return `${String(date.getHours()).padStart(2, "0")}??;
+    }
+
+    function getCongestionEstimate(weekday, hourLabel) {
+      if (!hourLabel || !window.CONGESTION_AVERAGES) return null;
+      return window.CONGESTION_AVERAGES[String(weekday)]?.[hourLabel] || null;
     }
 
     function getPreferredRows(rows) {
@@ -810,7 +819,7 @@
       const head = document.createElement("div");
       head.className = "matrix-head";
       head.innerHTML = `
-        <div>날짜</div>
+        <div>?좎쭨</div>
         ${HOURS.map((hour) => `<div>${hour}</div>`).join("")}
       `;
       container.appendChild(head);
@@ -849,8 +858,8 @@
 
     function renderSummary() {
       const preferredRow = getPreferredRows(DATA)[0] || getOrderedRows(DATA)[0];
-      const currentHourLabel = getCurrentHourLabel();
-      const liveCongestion = getLiveCongestionEstimate(DATA, TARGET_WEEKDAY, currentHourLabel);
+      const currentHourLabel = getLiveHourLabel();
+      const liveCongestion = getCongestionEstimate(TARGET_WEEKDAY, currentHourLabel);
 
       document.getElementById("dateRangeLabel").textContent = formatDateRange(DATA[0].date, DATA[DATA.length - 1].date);
       document.getElementById("mobileRangeLabel").textContent = formatDateRange(DATA[0].date, DATA[DATA.length - 1].date);
@@ -862,16 +871,13 @@
 
       const liveLabel = document.getElementById("liveCongestionLabel");
       const liveValue = document.getElementById("liveCongestionValue");
-      if (liveCongestion && currentHourLabel) {
-        const roundedAverage = Math.round(liveCongestion.average * 10) / 10;
-        liveLabel.textContent = `${currentHourLabel} 기준 · ${liveCongestion.sampleCount}개 날짜 평균`;
-        liveValue.textContent = `${roundedAverage}명`;
-      } else if (currentHourLabel) {
+      if (liveCongestion) {
+        const roundedAverage = Math.round(liveCongestion.avg * 10) / 10;
+        liveLabel.textContent = `${currentHourLabel} 기준 · ${liveCongestion.count}개 날짜 평균`;
+        liveValue.textContent = `${roundedAverage}`;
+      } else {
         liveLabel.textContent = `${currentHourLabel} 기준 · 평균 계산 불가`;
         liveValue.textContent = "데이터 없음";
-      } else {
-        liveLabel.textContent = "17시~00시 구간만 제공";
-        liveValue.textContent = "현재 시간 제외";
       }
     }
 
@@ -894,3 +900,4 @@
   </script>
 </body>
 </html>
+
