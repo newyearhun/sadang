@@ -655,7 +655,7 @@
       <div class="congestion-card">
         <div>
           <div class="congestion-kicker" id="congestionTargetLabel">계산 중</div>
-          <div class="congestion-subtext" id="congestionBasisLabel">6월 1일부터 28일.xlsx 기준</div>
+          <div class="congestion-subtext" id="congestionBasisLabel">혼잡도.CSV 기준</div>
         </div>
         <div class="status-pill is-live" id="liveCongestionValue">계산 중</div>
       </div>
@@ -933,7 +933,7 @@
       const congestion = getCongestionEstimate(targetWeekday, hourLabel);
 
       targetLabel.textContent = `${getCongestionTargetLabel()} · ${hourLabel}`;
-      basisLabel.textContent = "6월 1일부터 28일.xlsx의 같은 요일·같은 시간 평균";
+      basisLabel.textContent = "혼잡도.CSV의 같은 요일·같은 시간 평균";
 
       if (congestion) {
         value.textContent = `${Math.round(congestion.avg)}`;
