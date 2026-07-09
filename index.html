@@ -852,8 +852,8 @@
 
     function getCongestionAdvice(avg) {
       if (avg == null) return "탑승 가능 여부를 계산할 수 없어요";
-      if (avg < 95) return "이번 버스 가능";
-      return "다음 버스 권장";
+      if (avg < 95) return "이번 버스 탑승 가능";
+      return "다음 버스 탑승 권장";
     }
 
     function getPreferredRows(rows) {
