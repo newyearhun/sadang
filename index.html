@@ -676,7 +676,7 @@
       <div class="congestion-card">
         <div class="congestion-meta">
           <div class="congestion-kicker" id="congestionTargetLabel">계산 중</div>
-          <div class="congestion-subtext" id="congestionBasisLabel">혼잡도 = 정류장별 최대 차내 승객 수 ÷ 차량 승차원 수</div>
+          <div class="congestion-subtext" id="congestionBasisLabel">혼잡도 = 정류장별 최대 차내 승객 수 ÷ 차량 승차원 수 * 100</div>
           <div class="congestion-advice" id="congestionAdvice">탑승 가능 여부 확인 중</div>
         </div>
         <div class="status-pill is-live" id="liveCongestionValue">계산 중</div>
@@ -962,7 +962,7 @@
       const congestion = getCongestionEstimate(targetWeekday, hourLabel);
 
       targetLabel.textContent = `${getCongestionTargetLabel()} · ${hourLabel}`;
-      basisLabel.textContent = "혼잡도 = 정류장별 최대 차내 승객 수 ÷ 차량 승차원 수";
+      basisLabel.textContent = "혼잡도 = 정류장별 최대 차내 승객 수 ÷ 차량 승차원 수 * 100";
 
       if (congestion) {
         const rounded = Math.round(congestion.avg);
