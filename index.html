@@ -469,6 +469,10 @@
       margin-top: 0.4rem;
     }
 
+    .mobile-range-bar {
+      display: none;
+    }
+
     @media (max-width: 960px) {
       .hero,
       .tiles {
@@ -485,10 +489,15 @@
       .page {
         width: min(100% - 2rem, 1180px);
         padding-top: 1.6rem;
+        padding-bottom: 8.8rem;
       }
 
       .hero-side,
       .panel { padding: 1.8rem; }
+
+      .hero-side {
+        display: none;
+      }
 
       .panel-header {
         margin-bottom: 1rem;
@@ -508,6 +517,38 @@
       }
 
       .footer-band { padding: 1.8rem; }
+
+      .mobile-range-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        position: fixed;
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        z-index: 20;
+        padding: 1rem 1.2rem;
+        border-radius: 1.6rem;
+        background: rgba(255, 255, 255, 0.96);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+        backdrop-filter: blur(10px);
+      }
+
+      .mobile-range-bar strong {
+        display: block;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .mobile-range-bar span {
+        display: block;
+        margin-top: 0.2rem;
+        font-size: 1.3rem;
+        color: var(--text-soft);
+      }
     }
   </style>
 </head>
@@ -589,6 +630,13 @@
       </div>
     </section>
   </main>
+
+  <div class="mobile-range-bar" aria-label="표시 범위">
+    <div>
+      <strong>표시 범위</strong>
+      <span id="mobileDateRangeLabel">2026-06-01 ~ 2026-06-21</span>
+    </div>
+  </div>
 
   <script>
     const HOURS = ["17시", "18시", "19시", "20시", "21시", "22시", "23시", "00시"];
@@ -776,6 +824,7 @@
       const preferredRow = getPreferredRows(DATA)[0] || getOrderedRows(DATA)[0];
 
       document.getElementById("dateRangeLabel").textContent = formatDateRange(DATA[0].date, DATA[DATA.length - 1].date);
+      document.getElementById("mobileDateRangeLabel").textContent = formatDateRange(DATA[0].date, DATA[DATA.length - 1].date);
       document.getElementById("preferredWeekdayLabel").textContent = `${TARGET_WEEKDAY_LABEL} 우선`;
       if (preferredRow) {
         document.getElementById("preferredDateLabel").textContent = `${formatDate(preferredRow.date)} · ${getWeeksAgoLabel(preferredRow.date)}`;
